@@ -13,3 +13,18 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.browserSync({
+    proxy: 'http://127.0.0.1:8888',
+    open : false
+});
+
+// mix.options({
+//     processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+// });
+
+// mix.setResourceRoot('/social/public/');
+
+// if (mix.inProduction()) {
+//     mix.version();
+// }
