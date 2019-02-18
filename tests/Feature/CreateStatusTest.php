@@ -12,7 +12,6 @@ class CreateStatusTest extends TestCase
 {
     use RefreshDatabase;
 
-
     /** @test */
     public function an_guest_user_cant_create_status()
     {
@@ -36,7 +35,9 @@ class CreateStatusTest extends TestCase
         $response->assertJson([
             'data' => [
                 'body' => 'Mi primer status',
-                'user_name' => auth()->user()->name
+                'user' => [
+                    "name" => auth()->user()->name
+                ]
             ]
         ]);
 

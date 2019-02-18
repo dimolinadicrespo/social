@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Http\Resources;
 
+use App\Http\Resources\UserResource;
 use App\Models\Comment;
 use Tests\TestCase;
 use App\Models\Status;
@@ -23,10 +24,14 @@ class CommentResourceTest extends TestCase
 
         $this->assertEquals($comment->id, $commentResource['id']);
         $this->assertEquals($comment->body, $commentResource['body']);
-        $this->assertEquals($comment->user->name, $commentResource['user_name']);
+
+        $this->assertInstanceOf(
+            UserResource::class,
+            $commentResource['user']
+        );
+
         $this->assertEquals($comment->status->id, $commentResource['status_id']);
         $this->assertEquals(0, $commentResource['count_likes']);
         $this->assertEquals(false, $commentResource['is_liked']);
-        $this->assertEquals('https://i0.wp.com/aprendible.com/images/default-avatar.jpg?ssl=1', $commentResource['user_avatar']);
     }
 }

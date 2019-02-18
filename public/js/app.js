@@ -48549,19 +48549,16 @@ var render = function() {
       _c("div", { staticClass: "d-flex align-items-center mb-2" }, [
         _c("img", {
           staticClass: "rounded mr-3",
-          attrs: {
-            width: "40px",
-            src:
-              "https://i0.wp.com/aprendible.com/images/default-avatar.jpg?ssl=1",
-            alt: ""
-          }
+          attrs: { width: "40px", src: _vm.status.user.avatar, alt: "" }
         }),
         _vm._v(" "),
         _c("div", [
-          _c("h5", {
-            staticClass: "mb-1",
-            domProps: { textContent: _vm._s(_vm.status.user_name) }
-          }),
+          _c("h5", { staticClass: "mb-1" }, [
+            _c("a", {
+              attrs: { href: _vm.status.user.link },
+              domProps: { textContent: _vm._s(_vm.status.user.name) }
+            })
+          ]),
           _vm._v(" "),
           _c("div", {
             staticClass: "small text-muted",
@@ -48618,18 +48615,18 @@ var render = function() {
               _c("img", {
                 staticClass: "rounded mr-2 shadow-sm",
                 attrs: {
-                  src: comment.user_avatar,
+                  src: comment.user.avatar,
                   width: "32px",
                   height: "32px",
-                  alt: comment.user_name
+                  alt: comment.user.name
                 }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "flex-grow-1" }, [
                 _c("div", { staticClass: "card border-0 shadow-sm" }, [
                   _c("div", { staticClass: "card-body p-2 text-secondary" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("strong", [_vm._v(_vm._s(comment.user_name) + " ")])
+                    _c("a", { attrs: { href: comment.user.link } }, [
+                      _c("strong", [_vm._v(_vm._s(comment.user.name) + " ")])
                     ]),
                     _vm._v(
                       "\n                            " +
@@ -48662,7 +48659,7 @@ var render = function() {
                         attrs: { dusk: "comment-like-count" }
                       },
                       [
-                        _c("div", [
+                        _c("div", { attrs: { dusk: "comments-likes-count" } }, [
                           _c("i", {
                             staticClass: "far fa-thumbs-up mr-1 text-white"
                           }),
@@ -48704,8 +48701,7 @@ var render = function() {
                     _c("img", {
                       staticClass: "rounded float-left mr-2 shadow-sm",
                       attrs: {
-                        src:
-                          "https://i0.wp.com/aprendible.com/images/default-avatar.jpg?ssl=1",
+                        src: _vm.user.avatar,
                         width: "34px",
                         alt: _vm.user.name
                       }
