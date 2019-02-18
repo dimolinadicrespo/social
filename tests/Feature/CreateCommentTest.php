@@ -25,8 +25,10 @@ class CreateCommentTest extends TestCase
         $response->assertJson([
             'data' => [
                 'body' => $comment['body'],
-                'user_name' => $user->name,
                 'status_id' => $status->id,
+                'user' => [
+                    "name" => auth()->user()->name
+                ]
             ]
         ]);
 
