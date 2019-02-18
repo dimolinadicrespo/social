@@ -14,7 +14,6 @@ class CanSeeProfileTest extends TestCase
     public function authenticated_user_can_see_user_profile()
     {
         factory(User::class)->create(['name' => 'Diego']);
-//        $this->get(route('users.show',$user->name))->assertSee('Diego Molina');
-        $this->get('Diego')->assertSee('Diego');
+        $this->get('@Diego')->assertSee('Diego');
     }
 }

@@ -35,7 +35,7 @@ Route::post('comments/{comment}/likes', 'CommentsLikesController@store')->name('
 Route::delete('comments/{comment}/likes', 'CommentsLikesController@destroy')->name('comments.likes.destroy')->middleware('auth');
 
 //Users
-Route::get('{user}','UserController@show')->name('users.show');
+Route::get('@{user}','UserController@show')->name('users.show');
 
 //Route::get('/prueba', function () {
 ////    $valor = route('statuses.store',['body' => 'Mi primer status']);
