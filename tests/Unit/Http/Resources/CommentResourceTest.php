@@ -2,12 +2,10 @@
 
 namespace Tests\Unit\Http\Resources;
 
-use App\Http\Resources\UserResource;
-use App\Models\Comment;
 use Tests\TestCase;
-use App\Models\Status;
+use App\Models\Comment;
+use App\Http\Resources\UserResource;
 use App\Http\Resources\CommentResource;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CommentResourceTest extends TestCase
