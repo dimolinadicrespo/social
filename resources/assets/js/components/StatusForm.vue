@@ -5,7 +5,7 @@
                 <textarea v-model="body"
                           class="form-control border-0 bg-light"
                           name="body"
-                          :placeholder="'¿En qué estás penando'+user.name+'?'"></textarea>
+                          :placeholder='`¿En qué estás penando ${user.name}?`'></textarea>
             </div>
             <div class="card-footer">
                 <button class="btn btn-primary" id="create-status">
